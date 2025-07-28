@@ -1,0 +1,19 @@
+module MASTER_CTRL #(
+    parameter ADDR0 = 16'h0
+) (
+    input         CLK,
+    input         RST,
+    input  [15:0] ADDR,
+    input  [15:0] DATA,
+    output [15:0] CTRL_DATA
+);
+  reg data_r;
+  always @(posedge CLK or negedge RST) begin
+    if (!RST) begin
+      data_r <= 16'h0;
+    end else if (ADDR == ADDR0) begin
+      data_r <= DATA;
+    end
+  end
+  assign CTRL_DATA = data_r;
+endmodule

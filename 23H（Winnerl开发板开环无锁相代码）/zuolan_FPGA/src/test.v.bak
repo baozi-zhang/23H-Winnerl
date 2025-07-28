@@ -1,0 +1,7 @@
+module test (
+    input  [15:0] old_data,
+    output [15:0] new_data
+);
+  assign new_data = old_data + 5;
+
+endmodule

@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Jul 15 12:25:44 2025
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+Revision Name : JYX_FPGA_OBJECT
+Top-level Entity Name : TOP
+Family : Cyclone IV E
+Total logic elements : 2,235
+    Total combinational functions : 1,475
+    Dedicated logic registers : 1,589
+Total registers : 1589
+Total pins : 80
+Total virtual pins : 0
+Total memory bits : 86,016
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 1

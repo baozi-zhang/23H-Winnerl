@@ -1,0 +1,24 @@
+module FREQ_DEV (
+    input             CLK,
+    input             EN,
+    input      [15:0] FREQH_W,
+    input      [15:0] FREQL_W,
+    output reg        FREQ_OUT
+);
+
+  // Signal declaration
+  reg [31:0] FREQ_WORD;
+  reg [31:0] ACC = 32'd0;  // Initialize ACC to 0
+
+  always @(posedge CLK) begin
+    if (EN) begin
+      ACC <= ACC + FREQ_WORD;  // Accumulate with FREQ_WORD
+    end
+    FREQ_OUT <= ACC[31];  // Output the most significant bit
+  end
+
+  always @(posedge CLK) begin
+    FREQ_WORD <= {FREQH_W, FREQL_W};  // Concatenate FREQH_W and FREQL_W
+  end
+
+endmodule
